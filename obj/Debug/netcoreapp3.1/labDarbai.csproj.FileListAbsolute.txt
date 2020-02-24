@@ -1,0 +1,11 @@
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai.deps.json
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai.runtimeconfig.json
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai.runtimeconfig.dev.json
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai.dll
+/Users/valdas/uni/labDarbai/bin/Debug/netcoreapp3.1/labDarbai.pdb
+/Users/valdas/uni/labDarbai/obj/Debug/netcoreapp3.1/labDarbai.csprojAssemblyReference.cache
+/Users/valdas/uni/labDarbai/obj/Debug/netcoreapp3.1/labDarbai.AssemblyInfoInputs.cache
+/Users/valdas/uni/labDarbai/obj/Debug/netcoreapp3.1/labDarbai.AssemblyInfo.cs
+/Users/valdas/uni/labDarbai/obj/Debug/netcoreapp3.1/labDarbai.dll
+/Users/valdas/uni/labDarbai/obj/Debug/netcoreapp3.1/labDarbai.pdb
