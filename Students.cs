@@ -10,6 +10,7 @@ namespace MyApp
         public string Name { get; set; }
         public string SureName { get; set; }
         public double FinalGrade { get; set; } = 0.0;
+        public static Random Rand = new Random();
         public Students(string name, string surname)
         {
             Name = name;
@@ -59,6 +60,20 @@ namespace MyApp
          public string[] GetDataMedian()
         {
             return new string[] {Name, SureName, $"{GetMedianMark():0.00}" };
+        }
+
+        public void AddRandomData(int n)
+        {
+            FinalGrade = Rand.NextDouble() * 10;
+            for (int j = 0; j < n; j++)
+            {
+                AddGrade(Rand.NextDouble() * 10);
+            }
+        }
+
+        public void AddGrade(double grade)
+        {
+            studentGrades.Add(grade);
         }
     }
 }

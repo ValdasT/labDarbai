@@ -42,6 +42,22 @@ namespace MyApp
                     return true;
             }
         }
+        
+        private static char selectDataInsertion()
+        {
+            Console.WriteLine("Ivesti duomenis ranka spausti \"r\"");
+            Console.WriteLine("Generuoti duomenis spausti \"g\"");
+            Console.WriteLine("(x) - Exit");
+            switch (Console.ReadLine())
+            {
+                case "r":
+                    return 'r';
+                case "g":
+                    return 'g';
+                default:
+                    return 'r';
+            }
+        }
         private static void ByHand(List<Students> studentsList)
         {
             Console.Clear();
@@ -52,17 +68,26 @@ namespace MyApp
             var Student = new Students(name, sureName);
             int homeWorkAmount = insertArraySize();
             var homeWorkMarks = new double[homeWorkAmount];
-            for (int i = 0; i < homeWorkAmount; i++){
-                homeWorkMarks[i] = insertHomeWorkMark();
+            if (selectDataInsertion() == 'r')
+            {
+                for (int i = 0; i < homeWorkAmount; i++)
+                {
+                    homeWorkMarks[i] = insertHomeWorkMark();
+                }
+                Student.SetStudentGrades(homeWorkMarks.ToList());
+                var finalMark = insertFinalMark();
+                Student.FinalGrade = finalMark;
             }
-            Student.SetStudentGrades(homeWorkMarks.ToList());
-            var finalMark = insertFinalMark();
-            Student.FinalGrade = finalMark;
+            else
+            {
+                Student.AddRandomData(homeWorkAmount);
+            }
             studentsList.Add(Student);
         }
 
         public static int insertArraySize()
         {
+            Console.Clear();
             Console.WriteLine("Iveskite studento namu darbu kieki:");
             try
             {
@@ -93,7 +118,6 @@ namespace MyApp
             }
         }
 
-        
         public static double insertFinalMark()
         {
             Console.WriteLine("Iveskite studento egzamino pazimi:");
