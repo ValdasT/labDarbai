@@ -62,6 +62,11 @@ namespace MyApp
             return new string[] {Name, SureName, $"{GetMedianMark():0.00}" };
         }
 
+        public string[] GetDataAverageAndMedian()
+        {
+            return new string[] { Name, SureName, $"{GetAverageMark():0.00}", $"{GetMedianMark():0.00}" };
+        }
+
         public void AddRandomData(int n)
         {
             FinalGrade = Rand.NextDouble() * 10;

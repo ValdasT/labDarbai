@@ -34,5 +34,21 @@ namespace MyApp
                 Console.WriteLine(row);
             }
         }
+
+        public static void DisplayAverageAndMedian(List<Students> studentsList)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Vardas   Pavarde     Galutinis (Vid.)    Galutinis (Med.)");
+            Console.WriteLine("---------------------------------------------------------");
+            foreach (var student in studentsList)
+            {
+                string row = "";
+                foreach (var element in student.GetDataAverageAndMedian())
+                {
+                    row += element + "   ";
+                }
+                Console.WriteLine(row);
+            }
+        }
     }
 }
