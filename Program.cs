@@ -133,13 +133,5 @@ namespace MyApp
                 return 0;
             }
         }
-
-        private static void DisplayResult(string message)
-        {
-            Console.WriteLine($"\r\nAtsakymas yra: {message}");
-            Console.Write("\r\nSpausti Enter, kad grizti i meniu.");
-            Console.ReadLine();
-        }
-
     }
 }
