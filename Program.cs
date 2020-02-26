@@ -18,7 +18,8 @@ namespace MyApp
         private static bool insertStudentsByHand( List<Students> studentsList)
         {
             if(studentsList.Count == 0){
-                 Console.WriteLine("(y) - Ivesti pirmo studento duomenis?");
+                 Console.WriteLine("(y) - Ivesti studentu duomenis ranka?");
+                 Console.WriteLine("(f) - Gauti studentu duomenis is failo?");
             }else{
                  Console.WriteLine("(y) - Ivesti kito studento duomenis?");
                  Console.WriteLine("(v) - Spausdinti studento duomenis su vidurkiais?");
@@ -35,6 +36,9 @@ namespace MyApp
                     return true;
                 case "m":
                     Printer.DisplayWithMedian(studentsList);
+                    return true;
+                case "f":
+                    insertDataFromFile(studentsList);
                     return true;
                 case "x":
                     return false;
@@ -132,6 +136,33 @@ namespace MyApp
                 insertFinalMark();
                 return 0;
             }
+        }
+
+        private static void insertDataFromFile(List<Students> studentsList)
+        {
+            Console.Clear();
+            // Console.WriteLine("Iveskite studento varda:");
+            // string name = Console.ReadLine();
+            // Console.WriteLine("Iveskite studento pavarde:");
+            // string sureName = Console.ReadLine();
+            // var Student = new Students(name, sureName);
+            // int homeWorkAmount = insertArraySize();
+            // var homeWorkMarks = new double[homeWorkAmount];
+            // if (selectDataInsertion() == 'r')
+            // {
+            //     for (int i = 0; i < homeWorkAmount; i++)
+            //     {
+            //         homeWorkMarks[i] = insertHomeWorkMark();
+            //     }
+            //     Student.SetStudentGrades(homeWorkMarks.ToList());
+            //     var finalMark = insertFinalMark();
+            //     Student.FinalGrade = finalMark;
+            // }
+            // else
+            // {
+            //     Student.AddRandomData(homeWorkAmount);
+            // }
+            // studentsList.Add(Student);
         }
     }
 }
