@@ -149,7 +149,6 @@ namespace MyApp
             double grade = 0.0;
             foreach (string line in File.ReadLines("./kursiokai.txt").Skip(1))
             {
-                Console.WriteLine(line);
                 var elements = line.Split(' ').ToArray();
                 var homeWorkMarks = new double[(elements.Length) - 3];
                 var finalMark = 0.0;
@@ -158,7 +157,6 @@ namespace MyApp
                 {
                     if (it.Index != 0 && it.Index != 1 && it.Index != elements.Length - 1)
                     {
-                        System.Console.WriteLine(it.Value);
                         if (double.TryParse(it.Value, out grade))
                         {
                             homeWorkMarks[counter] = grade;
@@ -178,6 +176,8 @@ namespace MyApp
                 Student.FinalGrade = finalMark;
                 studentsList.Add(Student);
             }
+            // ThenByDescending ; OrderBy
+            studentsList = studentsList.OrderBy(x => x.Name).OrderBy(x => x.SureName).ToList();
             Printer.DisplayAverageAndMedian(studentsList);
         }
     }
