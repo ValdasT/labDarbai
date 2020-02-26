@@ -104,7 +104,7 @@ namespace MyApp
 
         public static double insertHomeWorkMark()
         {
-            Console.WriteLine("Iveskite studento namu darbu pazimi:");
+            Console.WriteLine("Iveskite studento namu darbu pazymi:");
             try
             {
                 var mark = double.Parse(Console.ReadLine());
@@ -120,7 +120,7 @@ namespace MyApp
 
         public static double insertFinalMark()
         {
-            Console.WriteLine("Iveskite studento egzamino pazimi:");
+            Console.WriteLine("Iveskite studento egzamino pazymi:");
             try
             {
                 var mark = double.Parse(Console.ReadLine());
