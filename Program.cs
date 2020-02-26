@@ -29,6 +29,7 @@ namespace MyApp
                 Console.WriteLine("(f) - Pakartoti studentu duomenis is failo?");
                 Console.WriteLine("(v) - Spausdinti studento duomenis su vidurkiais?");
                 Console.WriteLine("(m) - Spausdinti studento duomenis su medianomis?");
+                Console.WriteLine("(l) - Spausdinti sulygiuota lentele su mediana ir vidurkiu?");
             }
             Console.WriteLine("(x) - Exit");
             switch (Console.ReadLine())
@@ -44,6 +45,9 @@ namespace MyApp
                     return true;
                 case "f":
                     insertDataFromFile(studentsList);
+                    return true;
+                case "l":
+                    Printer.DisplayAverageAndMedian(studentsList);
                     return true;
                 case "x":
                     return false;
@@ -176,8 +180,6 @@ namespace MyApp
                 Student.FinalGrade = finalMark;
                 studentsList.Add(Student);
             }
-            // ThenByDescending ; OrderBy
-            studentsList = studentsList.OrderBy(x => x.Name).OrderBy(x => x.SureName).ToList();
             Printer.DisplayAverageAndMedian(studentsList);
         }
     }
