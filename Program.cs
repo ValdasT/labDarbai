@@ -165,11 +165,18 @@ namespace MyApp
                         {
                             homeWorkMarks[counter] = grade;
                             counter++;
+                        }else{
+                            homeWorkMarks[counter] = grade;
+                            counter++;
                         }
                     }
                     if (it.Index == elements.Length - 1)
                     {
                         if (double.TryParse(it.Value, out grade))
+                        {
+                            finalMark = grade;
+                        }
+                        else
                         {
                             finalMark = grade;
                         }
