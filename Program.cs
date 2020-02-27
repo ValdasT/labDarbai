@@ -100,7 +100,6 @@ namespace MyApp
 
         public static int insertArraySize()
         {
-            Console.Clear();
             Console.WriteLine("Iveskite studento namu darbu kieki:");
             try
             {
