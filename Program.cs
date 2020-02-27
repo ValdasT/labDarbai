@@ -165,7 +165,9 @@ namespace MyApp
                         {
                             homeWorkMarks[counter] = grade;
                             counter++;
-                        }else{
+                        }
+                        else
+                        {
                             homeWorkMarks[counter] = grade;
                             counter++;
                         }
