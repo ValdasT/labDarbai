@@ -151,45 +151,54 @@ namespace MyApp
         {
             Console.Clear();
             double grade = 0.0;
-            foreach (string line in File.ReadLines("./kursiokai.txt").Skip(1))
+            try
             {
-                var elements = line.Split(' ').ToArray();
-                var homeWorkMarks = new double[(elements.Length) - 3];
-                var finalMark = 0.0;
-                var counter = 0;
-                foreach (var it in elements.Select((x, i) => new { Value = x, Index = i }))
+                foreach (string line in File.ReadLines("./kursiokai.txt").Skip(1))
                 {
-                    if (it.Index != 0 && it.Index != 1 && it.Index != elements.Length - 1)
+                    var elements = line.Split(' ').ToArray();
+                    var homeWorkMarks = new double[(elements.Length) - 3];
+                    var finalMark = 0.0;
+                    var counter = 0;
+                    foreach (var it in elements.Select((x, i) => new { Value = x, Index = i }))
                     {
-                        if (double.TryParse(it.Value, out grade))
+                        if (it.Index != 0 && it.Index != 1 && it.Index != elements.Length - 1)
                         {
-                            homeWorkMarks[counter] = grade;
-                            counter++;
+                            if (double.TryParse(it.Value, out grade))
+                            {
+                                homeWorkMarks[counter] = grade;
+                                counter++;
+                            }
+                            else
+                            {
+                                homeWorkMarks[counter] = grade;
+                                counter++;
+                            }
                         }
-                        else
+                        if (it.Index == elements.Length - 1)
                         {
-                            homeWorkMarks[counter] = grade;
-                            counter++;
+                            if (double.TryParse(it.Value, out grade))
+                            {
+                                finalMark = grade;
+                            }
+                            else
+                            {
+                                finalMark = grade;
+                            }
                         }
                     }
-                    if (it.Index == elements.Length - 1)
-                    {
-                        if (double.TryParse(it.Value, out grade))
-                        {
-                            finalMark = grade;
-                        }
-                        else
-                        {
-                            finalMark = grade;
-                        }
-                    }
+                    var Student = new Students(elements[0], elements[1]);
+                    Student.SetStudentGrades(homeWorkMarks.ToList());
+                    Student.FinalGrade = finalMark;
+                    studentsList.Add(Student);
                 }
-                var Student = new Students(elements[0], elements[1]);
-                Student.SetStudentGrades(homeWorkMarks.ToList());
-                Student.FinalGrade = finalMark;
-                studentsList.Add(Student);
+                Printer.DisplayAverageAndMedian(studentsList);
+
             }
-            Printer.DisplayAverageAndMedian(studentsList);
+            catch (System.Exception)
+            {
+                Console.WriteLine("Blogas arba neegzistuojantis failas!");
+                Console.WriteLine();
+            }
         }
     }
 }
