@@ -70,6 +70,7 @@ namespace MyApp
                 timer.Start();
                 var vargs = new List<Students>();
                 var kiet = new List<Students>();
+                var visi = new List<Students>();
 
                 for (int i = 0; i < e; i++)
                 {
@@ -79,15 +80,18 @@ namespace MyApp
                     if (student.GetAverageMark() < 5)
                     {
                         vargs.Add(student);
+                        visi.Add(student);
                     }
                     else
                     {
                         kiet.Add(student);
+                        visi.Add(student);
                     }
                 }
 
                 SaveInFile(Path.Combine($"vargsiukai-{e}.txt"), vargs);
                 SaveInFile(Path.Combine($"kietiakai-{e}.txt"), kiet);
+                SaveInFile(Path.Combine($"visi-{e}.txt"), visi);
                 timer.Stop();
                 Console.WriteLine($"{e} irasu sukurta per ---> {timer.Elapsed}");
             }
@@ -116,7 +120,7 @@ namespace MyApp
 
         public static void SpeedTest()
         {
-            
+            var folderOfFiles = new DirectoryInfo("files/");
         }
     }
 }
