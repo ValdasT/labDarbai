@@ -25,7 +25,7 @@ namespace MyApp
 
         public double GetAverageMark()
         {
-            if(studentGrades.Count == 0)
+            if (studentGrades.Count == 0)
             {
                 return FinalGrade * 0.7;
             }
@@ -35,7 +35,7 @@ namespace MyApp
 
         public double GetMedianMark()
         {
-            if(studentGrades.Count == 0)
+            if (studentGrades.Count == 0)
             {
                 return FinalGrade * 0.7;
             }
@@ -45,7 +45,7 @@ namespace MyApp
             if (studentGrades.Count % 2 == 0 && studentGrades.Count >= 2)
             {
                 int i = (int)((double)(studentGrades.Count - 2) / 2);
-                return ((studentGrades[i] + studentGrades[i + 1])/2.0) * 0.3 + FinalGrade * 0.7;
+                return ((studentGrades[i] + studentGrades[i + 1]) / 2.0) * 0.3 + FinalGrade * 0.7;
             }
 
             int middle = (int)Math.Floor((double)studentGrades.Count / 2.0);
@@ -54,12 +54,12 @@ namespace MyApp
 
         public string[] GetDataAverage()
         {
-            return new string[] {Name, SureName, $"{GetAverageMark():0.00}" };
+            return new string[] { Name, SureName, $"{GetAverageMark():0.00}" };
         }
 
-         public string[] GetDataMedian()
+        public string[] GetDataMedian()
         {
-            return new string[] {Name, SureName, $"{GetMedianMark():0.00}" };
+            return new string[] { Name, SureName, $"{GetMedianMark():0.00}" };
         }
 
         public string[] GetDataAverageAndMedian()
