@@ -113,5 +113,10 @@ namespace MyApp
             }
             file.Close();
         }
+
+        public static void SpeedTest()
+        {
+            
+        }
     }
 }

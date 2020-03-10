@@ -23,6 +23,7 @@ namespace MyApp
                 Console.WriteLine("(y) - Ivesti studentu duomenis ranka?");
                 Console.WriteLine("(f) - Gauti studentu duomenis is failo?");
                 Console.WriteLine("(5) - Sukurti 5 failus?");
+                Console.WriteLine("(k) - Konteineriu testavimo uzduotis");
             }
             else
             {
@@ -52,6 +53,9 @@ namespace MyApp
                     return true;
                 case "5":
                     WorkWithFile.CreateFiles();
+                    return true;
+                case "k":
+                    WorkWithFile.SpeedTest();
                     return true;
                 case "x":
                     return false;
