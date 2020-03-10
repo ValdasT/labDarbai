@@ -66,6 +66,8 @@ namespace MyApp
 
             foreach (var e in size)
             {
+                var timer = new System.Diagnostics.Stopwatch();
+                timer.Start();
                 var vargs = new List<Students>();
                 var kiet = new List<Students>();
 
@@ -86,6 +88,8 @@ namespace MyApp
 
                 SaveInFile(Path.Combine($"vargsiukai-{e}.txt"), vargs);
                 SaveInFile(Path.Combine($"kietiakai-{e}.txt"), kiet);
+                timer.Stop();
+                Console.WriteLine($"{e} irasu sukurta per ---> {timer.Elapsed}");
             }
         }
 
