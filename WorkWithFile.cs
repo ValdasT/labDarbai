@@ -118,9 +118,49 @@ namespace MyApp
             file.Close();
         }
 
+        public static Students ReadInfoFromFile(string line)
+        {
+            var args = line.Split().Where(x => !x.Equals("")).ToArray();
+            var student = new Students(args[0], args[1], double.Parse(args[2]));
+            return student;
+        }
+
         public static void SpeedTest()
         {
             var folderOfFiles = new DirectoryInfo("files/");
+            var files = folderOfFiles.GetFiles().ToList().Where(file => (file.FullName != null && file.FullName.Contains("visi"))).OrderBy(file => file.Length);
+            foreach (var file in files)
+            {
+            Console.WriteLine($"failas: {file.Name}");
+            Console.WriteLine($"Su listu greitis: {testListSpeed(file.FullName)}");
+            Console.WriteLine($"---------------------------------------------");
+            }
+        }
+        public static TimeSpan testListSpeed(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var studentsList = new List<Students>();
+            var vargs = new List<Students>();
+            var kiet = new List<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                studentsList.Add(ReadInfoFromFile(line));
+            }
+            for (int i = 0; i < studentsList.Count; i++)
+            {
+                if (studentsList[i].getCalculatedGrades() < 5)
+                {
+                    vargs.Add(studentsList[i]);
+                }
+                else
+                {
+                    kiet.Add(studentsList[i]);
+                }
+            }
+
+            timer.Stop();
+            return timer.Elapsed;
         }
     }
 }

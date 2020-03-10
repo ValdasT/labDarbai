@@ -10,12 +10,25 @@ namespace MyApp
         public string Name { get; set; }
         public string SureName { get; set; }
         public double FinalGrade { get; set; } = 0.0;
+        public double CalculatedGrade { get; set; } = 0.0;
         public static Random Rand = new Random();
         public Students(string name, string surname)
         {
             Name = name;
             SureName = surname;
             studentGrades = new List<double>();
+        }
+
+        public Students(string name, string surname, double grade)
+        {
+            Name = name;
+            SureName = surname;
+            CalculatedGrade = grade;
+        }
+
+        public double getCalculatedGrades(){
+
+            return CalculatedGrade;
         }
 
         public void SetStudentGrades(List<double> grades)
