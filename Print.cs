@@ -53,7 +53,7 @@ namespace MyApp
             }
         }
 
-        static void printLine(params string[] line)
+        public static void printLine(params string[] line)
         {
             int size = 100 / line.Length;
             string row = "";
@@ -63,6 +63,17 @@ namespace MyApp
                 row += element.PadRight(size - (size - element.Length) / 2).PadLeft(size);
             }
             Console.WriteLine(row);
+        }
+        public static string returnLine(params string[] line)
+        {
+            int size = 100 / line.Length;
+            string row = "";
+
+            foreach (string element in line)
+            {
+                row += element.PadRight(size - (size - element.Length) / 2).PadLeft(size);
+            }
+            return row;
         }
     }
 }

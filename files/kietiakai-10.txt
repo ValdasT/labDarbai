@@ -1,0 +1,5 @@
+             Vardas                           Pavarde                     Galutinis (Vid.)         
+             Vardas4                         Pavarde4                           7.26               
+             Vardas5                         Pavarde5                           6.56               
+             Vardas8                         Pavarde8                           7.08               
+             Vardas9                         Pavarde9                           5.85               

@@ -60,5 +60,54 @@ namespace MyApp
                 Console.WriteLine();
             }
         }
+        public static void CreateFiles()
+        {
+            int[] size = new int[] { 10, 100, 1000, 10000, 100000 };
+
+            foreach (var e in size)
+            {
+                var vargs = new List<Students>();
+                var kiet = new List<Students>();
+
+                for (int i = 0; i < e; i++)
+                {
+                    var student = new Students($"Vardas{i}", $"Pavarde{i}");
+                    student.AddRandomData(5);
+
+                    if (student.GetAverageMark() < 5)
+                    {
+                        vargs.Add(student);
+                    }
+                    else
+                    {
+                        kiet.Add(student);
+                    }
+                }
+
+                SaveInFile(Path.Combine($"vargsiukai-{e}.txt"), vargs);
+                SaveInFile(Path.Combine($"kietiakai-{e}.txt"), kiet);
+            }
+        }
+
+        public static void SaveInFile(string fileName, List<Students> studentsList)
+        {
+            System.IO.StreamWriter file;
+            try
+            {
+                file = new System.IO.StreamWriter("files/" + fileName);
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine("Netinkama failo vieta.{0}", err);
+                return;
+            }
+            file.WriteLine(Printer.returnLine("Vardas", "Pavarde", "Galutinis (Vid.)"));
+
+            foreach (var student in studentsList)
+            {
+                file.WriteLine(Printer.returnLine(student.Name, student.SureName, $"{student.GetAverageMark():0.00}"));
+            }
+            file.Close();
+        }
     }
 }

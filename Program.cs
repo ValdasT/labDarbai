@@ -22,6 +22,7 @@ namespace MyApp
             {
                 Console.WriteLine("(y) - Ivesti studentu duomenis ranka?");
                 Console.WriteLine("(f) - Gauti studentu duomenis is failo?");
+                Console.WriteLine("(5) - Sukurti 5 failus?");
             }
             else
             {
@@ -48,6 +49,9 @@ namespace MyApp
                     return true;
                 case "l":
                     Printer.DisplayAverageAndMedian(studentsList);
+                    return true;
+                case "5":
+                    WorkWithFile.CreateFiles();
                     return true;
                 case "x":
                     return false;
