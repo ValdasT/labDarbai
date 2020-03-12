@@ -133,10 +133,15 @@ namespace MyApp
             {
                 Console.WriteLine($"failas: {file.Name}");
                 Console.WriteLine($"Su List'u greitis: {testListSpeed(file.FullName)}");
+                Console.WriteLine($"Su List'u greitis (pagreitintas): {testListSpeedFaster(file.FullName)}");
                 Console.WriteLine($"Su List'u greitis su istrinimais: {testListSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine();
                 Console.WriteLine($"Su Linketlist'u greitis: {testLinkedListSpeed(file.FullName)}");
+                Console.WriteLine($"Su Linketlist'u greitis (pagreitintas): {testLinkedListSpeedFaster(file.FullName)}");
                 Console.WriteLine($"Su Linketlist'u greitis su istrinimais: {testLinkedListSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine();
                 Console.WriteLine($"Su Queue greitis: {testQueueSpeed(file.FullName)}");
+                Console.WriteLine($"Su Queue greitis (pagreitintas): {testQueueSpeedFaster(file.FullName)}");
                 Console.WriteLine($"Su Queue greitis su istrinimais: {testQueueSpeedWithDeletion(file.FullName)}");
                 Console.WriteLine($"---------------------------------------------");
             }
@@ -161,6 +166,28 @@ namespace MyApp
                 else
                 {
                     kiet.Add(studentsList[i]);
+                }
+            }
+
+            timer.Stop();
+            return timer.Elapsed;
+        }
+        public static TimeSpan testListSpeedFaster(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var vargs = new List<Students>();
+            var kiet = new List<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                var student = ReadInfoFromFile(line);
+                if (student.getCalculatedGrades() < 5)
+                {
+                    vargs.Add(student);
+                }
+                else
+                {
+                    kiet.Add(student);
                 }
             }
 
@@ -216,6 +243,29 @@ namespace MyApp
             return timer.Elapsed;
         }
 
+        public static TimeSpan testLinkedListSpeedFaster(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var vargs = new LinkedList<Students>();
+            var kiet = new LinkedList<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                var student = ReadInfoFromFile(line);
+                if (student.getCalculatedGrades() < 5)
+                {
+                    vargs.AddLast(student);
+                }
+                else
+                {
+                    kiet.AddLast(student);
+                }
+            }
+
+            timer.Stop();
+            return timer.Elapsed;
+        }
+
         public static TimeSpan testLinkedListSpeedWithDeletion(string fileName)
         {
             var timer = new System.Diagnostics.Stopwatch();
@@ -258,6 +308,28 @@ namespace MyApp
                 else
                 {
                     kiet.Enqueue(studentsList.ElementAt(i));
+                }
+            }
+            timer.Stop();
+            return timer.Elapsed;
+        }
+
+        public static TimeSpan testQueueSpeedFaster(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var vargs = new Queue<Students>();
+            var kiet = new Queue<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                var student = ReadInfoFromFile(line);
+                if (student.getCalculatedGrades() < 5)
+                {
+                    vargs.Enqueue(student);
+                }
+                else
+                {
+                    kiet.Enqueue(student);
                 }
             }
             timer.Stop();
