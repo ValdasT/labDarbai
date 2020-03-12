@@ -134,6 +134,7 @@ namespace MyApp
             Console.WriteLine($"failas: {file.Name}");
             Console.WriteLine($"Su List'u greitis: {testListSpeed(file.FullName)}");
             Console.WriteLine($"Su Linketlist'u greitis: {testLinkedListSpeed(file.FullName)}");
+            Console.WriteLine($"Su Queue greitis: {testQueueSpeed(file.FullName)}");
             Console.WriteLine($"---------------------------------------------");
             }
         }
@@ -184,6 +185,33 @@ namespace MyApp
                 else
                 {
                     kiet.AddLast(studentsList.ElementAt(i));
+                }
+            }
+
+            timer.Stop();
+            return timer.Elapsed;
+        }
+
+        public static TimeSpan testQueueSpeed(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var studentsList = new Queue<Students>();
+            var vargs = new Queue<Students>();
+            var kiet = new Queue<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                studentsList.Append(ReadInfoFromFile(line));
+            }
+            for (int i = 0; i < studentsList.Count; i++)
+            {
+                if (studentsList.ElementAt(i).getCalculatedGrades() < 5)
+                {
+                    vargs.Append(studentsList.ElementAt(i));
+                }
+                else
+                {
+                    kiet.Append(studentsList.ElementAt(i));
                 }
             }
 
