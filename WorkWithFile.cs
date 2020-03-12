@@ -131,11 +131,14 @@ namespace MyApp
             var files = folderOfFiles.GetFiles().ToList().Where(file => (file.FullName != null && file.FullName.Contains("visi"))).OrderBy(file => file.Length);
             foreach (var file in files)
             {
-            Console.WriteLine($"failas: {file.Name}");
-            Console.WriteLine($"Su List'u greitis: {testListSpeed(file.FullName)}");
-            Console.WriteLine($"Su Linketlist'u greitis: {testLinkedListSpeed(file.FullName)}");
-            Console.WriteLine($"Su Queue greitis: {testQueueSpeed(file.FullName)}");
-            Console.WriteLine($"---------------------------------------------");
+                Console.WriteLine($"failas: {file.Name}");
+                Console.WriteLine($"Su List'u greitis: {testListSpeed(file.FullName)}");
+                Console.WriteLine($"Su List'u greitis su istrinimais: {testListSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine($"Su Linketlist'u greitis: {testLinkedListSpeed(file.FullName)}");
+                Console.WriteLine($"Su Linketlist'u greitis su istrinimais: {testLinkedListSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine($"Su Queue greitis: {testQueueSpeed(file.FullName)}");
+                Console.WriteLine($"Su Queue greitis su istrinimais: {testQueueSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine($"---------------------------------------------");
             }
         }
         public static TimeSpan testListSpeed(string fileName)
@@ -161,6 +164,27 @@ namespace MyApp
                 }
             }
 
+            timer.Stop();
+            return timer.Elapsed;
+        }
+        public static TimeSpan testListSpeedWithDeletion(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var studentsList = new List<Students>();
+            var vargs = new List<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                studentsList.Add(ReadInfoFromFile(line));
+            }
+            for (int i = 0; i < studentsList.Count; i++)
+            {
+                if (studentsList[i].getCalculatedGrades() < 5)
+                {
+                    vargs.Add(studentsList[i]);
+                    studentsList.RemoveAt(i);
+                }
+            }
             timer.Stop();
             return timer.Elapsed;
         }
@@ -192,6 +216,28 @@ namespace MyApp
             return timer.Elapsed;
         }
 
+        public static TimeSpan testLinkedListSpeedWithDeletion(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var studentsList = new LinkedList<Students>();
+            var vargs = new LinkedList<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                studentsList.AddLast(ReadInfoFromFile(line));
+            }
+            for (int i = 0; i < studentsList.Count; i++)
+            {
+                if (studentsList.ElementAt(i).getCalculatedGrades() < 5)
+                {
+                    vargs.AddLast(studentsList.ElementAt(i));
+                    studentsList.Remove(studentsList.ElementAt(i));
+                }
+            }
+            timer.Stop();
+            return timer.Elapsed;
+        }
+
         public static TimeSpan testQueueSpeed(string fileName)
         {
             var timer = new System.Diagnostics.Stopwatch();
@@ -201,20 +247,41 @@ namespace MyApp
             var kiet = new Queue<Students>();
             foreach (string line in File.ReadLines(fileName).Skip(1))
             {
-                studentsList.Append(ReadInfoFromFile(line));
+                studentsList.Enqueue(ReadInfoFromFile(line));
             }
             for (int i = 0; i < studentsList.Count; i++)
             {
                 if (studentsList.ElementAt(i).getCalculatedGrades() < 5)
                 {
-                    vargs.Append(studentsList.ElementAt(i));
+                    vargs.Enqueue(studentsList.ElementAt(i));
                 }
                 else
                 {
-                    kiet.Append(studentsList.ElementAt(i));
+                    kiet.Enqueue(studentsList.ElementAt(i));
                 }
             }
+            timer.Stop();
+            return timer.Elapsed;
+        }
 
+        public static TimeSpan testQueueSpeedWithDeletion(string fileName)
+        {
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
+            var studentsList = new Queue<Students>();
+            var vargs = new Queue<Students>();
+            foreach (string line in File.ReadLines(fileName).Skip(1))
+            {
+                studentsList.Enqueue(ReadInfoFromFile(line));
+            }
+            for (int i = 0; i < studentsList.Count; i++)
+            {
+                if (studentsList.ElementAt(i).getCalculatedGrades() < 5)
+                {
+                    vargs.Enqueue(studentsList.ElementAt(i));
+                    studentsList = new Queue<Students>(studentsList.Where(x => x != studentsList.ElementAt(i)));
+                }
+            }
             timer.Stop();
             return timer.Elapsed;
         }
