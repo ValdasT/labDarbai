@@ -22,6 +22,8 @@
 |  Pavarde | pavardenis |        8.01        |
 |  Vardas  | Pavardenis |        1.55        |
 
+- Taip pat naudotojas gali sustabdyti programą "x".
+
 
 ## 0.2 versija ##
 
