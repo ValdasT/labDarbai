@@ -1,6 +1,5 @@
 ## 0.1 versija ##
 
-Usage:
 - Programa paprašo pasirinkti studento įvedimą ranka paspaudus "y".
 - Programa paprašo įvesti studento vardą, pavardę, namų darbų kiekį.
 - Programa paklausia ar pažymius įvesti ranka "r" ar su generuoti "g".
@@ -26,7 +25,6 @@ Usage:
 
 ## 0.2 versija ##
 
-Usage:
 - Programa paprašo pasirinkti studento įvedimą ranka paspaudus "y" arba nuskaityti duomenis iš failo "f".
 - Jei pasirinkta skaityti duomenis iš failo "f" programa nuskaito failą "kursiokai.txt" .
 - Kai yra nuskaityti duomenis arba įvesti ranka, tada programa leidžia atspausdinti duomenis. Jeigu reikia tik studentu pažimių vidurkio spoaudžiama  "v", jei medianos - "m", jeigu medianos ir vudurkio vienoje lentelėje spaudžiam "l".
