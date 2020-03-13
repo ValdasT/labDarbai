@@ -68,32 +68,32 @@
 ````
 failas: visi-10.txt
 Su List'u greitis: 00:00:00.0020335
-Su Linketlist'u greitis: 00:00:00.0005619
+Su Linkedlist'u greitis: 00:00:00.0005619
 Su Queue greitis: 00:00:00.0004115
 ---------------------------------------------
 failas: visi-100.txt
 Su List'u greitis: 00:00:00.0003621
-Su Linketlist'u greitis: 00:00:00.0004650
+Su Linkedlist'u greitis: 00:00:00.0004650
 Su Queue greitis: 00:00:00.0004411
 ---------------------------------------------
 failas: visi-1000.txt
 Su List'u greitis: 00:00:00.0028274
-Su Linketlist'u greitis: 00:00:00.0134785
+Su Linkedlist'u greitis: 00:00:00.0134785
 Su Queue greitis: 00:00:00.0028052
 ---------------------------------------------
 failas: visi-10000.txt
 Su List'u greitis: 00:00:00.0275661
-Su Linketlist'u greitis: 00:00:00.8786983
+Su Linkedlist'u greitis: 00:00:00.8786983
 Su Queue greitis: 00:00:00.0208593
 ---------------------------------------------
 failas: visi-100000.txt
 Su List'u greitis: 00:00:00.2101275
-Su Linketlist'u greitis: 00:01:49.4073582
+Su Linkedlist'u greitis: 00:01:49.4073582
 Su Queue greitis: 00:00:00.1734309
 ---------------------------------------------
 ````
 **Rezultatai skaičiuojami minutėmis, sekundėmis ir milisekundėmis**
-- Iš gautų rezultatų matosi, kad greičiausiai veikia Listas ir Queue, lėčiausias Linkelist.
+- Iš gautų rezultatų matosi, kad greičiausiai veikia Listas ir Queue, lėčiausias Linkedlist.
 
 ## 1.0 versija ##
 - Programoje papildyta konteinerio testavimo užduotis. Gritis skaičiuojams trijuose konteinerių tipuose ir skirtingo dydžio failuose, bet skaičiavimai atliekiami skirtingais būdais.
@@ -104,9 +104,9 @@ Su List'u greitis: 00:00:00.0020605
 Su List'u greitis (pagreitintas): 00:00:00.0001320
 Su List'u greitis su istrinimais: 00:00:00.0001009
 
-Su Linketlist'u greitis: 00:00:00.0005474
-Su Linketlist'u greitis (pagreitintas): 00:00:00.0000978
-Su Linketlist'u greitis su istrinimais: 00:00:00.0002445
+Su Linkedlist'u greitis: 00:00:00.0005474
+Su Linkedlist'u greitis (pagreitintas): 00:00:00.0000978
+Su Linkedlist'u greitis su istrinimais: 00:00:00.0002445
 
 Su Queue greitis: 00:00:00.0005175
 Su Queue greitis (pagreitintas): 00:00:00.0000974
@@ -117,9 +117,9 @@ Su List'u greitis: 00:00:00.0003564
 Su List'u greitis (pagreitintas): 00:00:00.0003310
 Su List'u greitis su istrinimais: 00:00:00.0003235
 
-Su Linketlist'u greitis: 00:00:00.0004824
-Su Linketlist'u greitis (pagreitintas): 00:00:00.0003282
-Su Linketlist'u greitis su istrinimais: 00:00:00.0004124
+Su Linkedlist'u greitis: 00:00:00.0004824
+Su Linkedlist'u greitis (pagreitintas): 00:00:00.0003282
+Su Linkedlist'u greitis su istrinimais: 00:00:00.0004124
 
 Su Queue greitis: 00:00:00.0004470
 Su Queue greitis (pagreitintas): 00:00:00.0003300
@@ -130,9 +130,9 @@ Su List'u greitis: 00:00:00.0037375
 Su List'u greitis (pagreitintas): 00:00:00.0027394
 Su List'u greitis su istrinimais: 00:00:00.0027239
 
-Su Linketlist'u greitis: 00:00:00.0134235
-Su Linketlist'u greitis (pagreitintas): 00:00:00.0028623
-Su Linketlist'u greitis su istrinimais: 00:00:00.0084112
+Su Linkedlist'u greitis: 00:00:00.0134235
+Su Linkedlist'u greitis (pagreitintas): 00:00:00.0028623
+Su Linkedlist'u greitis su istrinimais: 00:00:00.0084112
 
 Su Queue greitis: 00:00:00.0106143
 Su Queue greitis (pagreitintas): 00:00:00.0020090
@@ -143,9 +143,9 @@ Su List'u greitis: 00:00:00.0244806
 Su List'u greitis (pagreitintas): 00:00:00.0221319
 Su List'u greitis su istrinimais: 00:00:00.0304380
 
-Su Linketlist'u greitis: 00:00:00.8673559
-Su Linketlist'u greitis (pagreitintas): 00:00:00.0250935
-Su Linketlist'u greitis su istrinimais: 00:00:00.5534366
+Su Linkedlist'u greitis: 00:00:00.8673559
+Su Linkedlist'u greitis (pagreitintas): 00:00:00.0250935
+Su Linkedlist'u greitis su istrinimais: 00:00:00.5534366
 
 Su Queue greitis: 00:00:00.6849182
 Su Queue greitis (pagreitintas): 00:00:00.0263853
@@ -156,16 +156,16 @@ Su List'u greitis: 00:00:00.2200914
 Su List'u greitis (pagreitintas): 00:00:00.2180724
 Su List'u greitis su istrinimais: 00:00:00.5510121
 
-Su Linketlist'u greitis: 00:01:39.2978381
-Su Linketlist'u greitis (pagreitintas): 00:00:00.2712676
-Su Linketlist'u greitis su istrinimais: 00:00:59.1753696
+Su Linkedlist'u greitis: 00:01:39.2978381
+Su Linkedlist'u greitis (pagreitintas): 00:00:00.2712676
+Su Linkedlist'u greitis su istrinimais: 00:00:59.1753696
 
 Su Queue greitis: 00:01:08.8850364
 Su Queue greitis (pagreitintas): 00:00:00.2396848
 Su Queue greitis su istrinimais: 01:12:45.7343734
 ````
 **Rezultatai skaičiuojami minutėmis, sekundėmis ir milisekundėmis**
-- Iš gautų rezultatų matosi, kad greičiausiai veikia Listas ir Queue, lėčiausias Linkelist. Bet kai programauoje yra naudojami trinimai List yra greičiausias. Linkedlist trinimai ir Queue užtrunka daug kartų ilgiau. Queue konteinio duomenų skaičiavimas su ištrinimais užtrunka labai daug laiko. Bet pavyko visus konteinerius pagreitinti nuo orginalios versijos.
+- Iš gautų rezultatų matosi, kad greičiausiai veikia Listas ir Queue, lėčiausias Linkedlist. Bet kai programauoje yra naudojami trinimai List yra greičiausias. Linkedlist trinimai ir Queue užtrunka daug kartų ilgiau. Queue konteinio duomenų skaičiavimas su ištrinimais užtrunka labai daug laiko. Bet pavyko visus konteinerius pagreitinti nuo orginalios versijos.
 
 ## Diegimo instrukcija ##
 

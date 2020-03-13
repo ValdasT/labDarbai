@@ -136,9 +136,9 @@ namespace MyApp
                 Console.WriteLine($"Su List'u greitis (pagreitintas): {testListSpeedFaster(file.FullName)}");
                 Console.WriteLine($"Su List'u greitis su istrinimais: {testListSpeedWithDeletion(file.FullName)}");
                 Console.WriteLine();
-                Console.WriteLine($"Su Linketlist'u greitis: {testLinkedListSpeed(file.FullName)}");
-                Console.WriteLine($"Su Linketlist'u greitis (pagreitintas): {testLinkedListSpeedFaster(file.FullName)}");
-                Console.WriteLine($"Su Linketlist'u greitis su istrinimais: {testLinkedListSpeedWithDeletion(file.FullName)}");
+                Console.WriteLine($"Su Linkedlist'u greitis: {testLinkedListSpeed(file.FullName)}");
+                Console.WriteLine($"Su Linkedlist'u greitis (pagreitintas): {testLinkedListSpeedFaster(file.FullName)}");
+                Console.WriteLine($"Su Linkedlist'u greitis su istrinimais: {testLinkedListSpeedWithDeletion(file.FullName)}");
                 Console.WriteLine();
                 Console.WriteLine($"Su Queue greitis: {testQueueSpeed(file.FullName)}");
                 Console.WriteLine($"Su Queue greitis (pagreitintas): {testQueueSpeedFaster(file.FullName)}");
